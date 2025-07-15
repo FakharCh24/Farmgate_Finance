@@ -1,0 +1,106 @@
+'use client';
+
+import Link from 'next/link';
+import { Linkedin } from 'lucide-react';
+import { navLinks } from '@/lib/constants';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const Logo = () => (
+  <div className="flex items-center gap-0">
+    {/* Milk can with arrow SVG icon */}
+    <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 m-0 p-0">
+      <rect x="10" y="10" width="20" height="28" rx="6" fill="#234066"/>
+      <rect x="14" y="6" width="12" height="6" rx="2" fill="#234066"/>
+      <path d="M24 32v-8m0 0l-4 4m4-4l4 4" stroke="#2E9B5B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18 38c2 2 8 2 10 0" stroke="#234066" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+    <span className="flex flex-col leading-tight text-xl font-bold font-headline text-primary m-0 p-0 -ml-2">
+      <span className="text-primary mb-[-2px]">FARMGATE</span>
+      <span className="text-accent mt-[-2px]">FINANCE</span>
+    </span>
+  </div>
+);
+
+export function Footer() {
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
+  return (
+    <footer className="bg-gray-100 border-t">
+      <div className="container mx-auto px-4 md:px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <Logo />
+            <p className="text-sm text-muted-foreground">
+              Farmgate Finance Limited (Company Number 9356952)
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Auckland – Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
+              Hamilton – 17 Home Straight, Te Rapa, 3241, New Zealand<br />
+              Christchurch – Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand<br />
+              Invercargill – 136 Spey Street, Invercargill, 9810, New Zealand
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <div>
+            <h3 className="font-headline font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-accent focus:text-accent active:text-accent">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-headline font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                Email:{' '}
+                <a href="mailto:info@farmgatefinance.com" className="transition-colors hover:text-accent focus:text-accent active:text-accent">
+                  info@farmgatefinance.com
+                </a>
+              </li>
+              <li>
+                Phone:{' '}
+                <a href="tel:+6499505891" className="transition-colors hover:text-accent focus:text-accent active:text-accent">
+                  +64 (09)9505891
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h3 className="font-headline font-semibold mb-4">Follow Us</h3>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-colors hover:text-accent focus:text-accent active:text-accent"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </div>
+        </div>
+        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+          <p>&copy; {currentYear || new Date().getFullYear()} Farmgate Finance Ltd. All rights reserved.</p>
+          <p className="mt-2">
+            <Link href="/terms" className="transition-colors hover:text-accent focus:text-accent active:text-accent">Terms & Conditions</Link>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
