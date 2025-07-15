@@ -56,18 +56,18 @@ const AnimatedStepCard = ({
       )}
       style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
     >
-      <Card className="h-full text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card">
-        <div className="absolute -top-4 -right-4 text-8xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors duration-300">
+      <Card className="h-full text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card group-hover:border-[#2E9B5B]">
+        <div className="absolute -top-4 -right-4 text-8xl font-bold text-primary/5 group-hover:text-[#2E9B5B]/20 transition-colors duration-300">
           0{index + 1}
         </div>
         <CardHeader className="flex flex-col items-center justify-center">
-          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-[#2E9B5B] group-hover:text-white">
             <Icon className="h-8 w-8" />
           </div>
           <CardTitle className="font-headline text-xl">{step.title}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-muted-foreground text-sm">{step.description}</p>
+          <p className="text-[#2E9B5B] text-sm">{step.description}</p>
         </CardContent>
       </Card>
     </div>
@@ -94,14 +94,32 @@ export function HowItWorksSection() {
           <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
             Four simple steps to unlock your earnings instantly. Powered by
           </p>
-          <div className="mt-8 mb-12 flex justify-center">
-            <Image
-              src="/farmsource.png"
-              alt="FarmSource Logo"
-              width={200}
-              height={60}
-              data-ai-hint="company logo"
-            />
+          <div className="mt-8 mb-12 flex flex-col items-center justify-center">
+            <a
+              href="https://nzfarmsource.co.nz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-lg p-2 transition-transform focus:outline-none focus:ring-2 focus:ring-[#2E9B5B] hover:scale-105 active:scale-100"
+              aria-label="Visit FarmSource website (opens in new tab)"
+            >
+              <span className="relative flex items-center">
+                <Image
+                  src="/farmsource.png"
+                  alt="FarmSource Logo"
+                  width={200}
+                  height={60}
+                  data-ai-hint="company logo"
+                  className="transition-transform duration-300"
+                />
+                <span className="absolute -top-2 -right-6 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 group-focus:translate-y-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#2E9B5B] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4m3-4v8m0-8l-4 4m4-4l4 4" />
+                  </svg>
+                </span>
+              </span>
+              <span className="sr-only">(opens in new tab)</span>
+            </a>
+            <span className="mt-2 text-xs text-[#2E9B5B] font-semibold tracking-wide bg-[#2E9B5B]/10 px-2 py-0.5 rounded">Official Partner</span>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

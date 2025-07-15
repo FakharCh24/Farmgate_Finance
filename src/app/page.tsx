@@ -54,7 +54,7 @@ function AboutUsPreview() {
             </Button>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-105">
-            <Image
+             <Image
               src="/newzealand.jpg"
               alt="New Zealand landscape"
               width={600}
@@ -81,7 +81,7 @@ function TermsPreview() {
             We believe in clear and fair terms. Our Terms & Conditions outline the agreement between us and our valued users, ensuring a transparent and trustworthy relationship. We encourage you to read them to understand your rights and obligations.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
               <Link href="/terms">
                 Read Terms & Conditions <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -122,7 +122,7 @@ export default function Home() {
                 Why wait till next year to get paid for your milk? Get paid NOW.
             </p>
             <div className={cn("mt-8 flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 ease-out delay-500", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
-                <Button asChild size="lg" className="font-bold">
+                <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
                 <Link href="/login">
                     Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -184,63 +184,63 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }} viewport={{ once: true }}>
-              <Card className="lg:col-span-1 bg-primary/5 border-primary/20 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }} viewport={{ once: true }} className="h-full flex">
+              <Card className="lg:col-span-1 bg-primary/5 border-primary/20 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+              <CardHeader>
+                <CardTitle className="font-headline text-2xl text-primary">
+                  Our Fees
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-primary/80">
+                <p>
+                  We charge a small administration fee on the value of the milk
+                  solid receivables purchased.
+                </p>
+                <p>
+                  Interest is calculated daily on the outstanding balance and
+                  charged monthly. It's that simple.
+                </p>
+              </CardContent>
+            </Card>
+            </motion.div>
+            <div className="lg:col-span-2 grid md:grid-cols-2 gap-8 h-full">
+              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }} viewport={{ once: true }} className="h-full flex">
+                <Card className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
                 <CardHeader>
-                  <CardTitle className="font-headline text-2xl text-primary">
-                    Our Fees
+                  <CardTitle className="font-headline">
+                    What if Fonterra pays less?
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 text-primary/80">
-                  <p>
-                    We charge a small administration fee on the value of the milk
-                    solid receivables purchased.
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    If the final milk price is lower than the advance rate, the
+                    difference is simply added to your outstanding balance. We
+                    manage the risk, you get the cash flow.
                   </p>
-                  <p>
-                    Interest is calculated daily on the outstanding balance and
-                    charged monthly. It's that simple.
+                  <p className="mt-4 text-sm text-primary font-semibold">
+                    Example coming soon.
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
-            <div className="lg:col-span-2 grid md:grid-cols-2 gap-8">
-              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }} viewport={{ once: true }}>
-                <Card className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                  <CardHeader>
-                    <CardTitle className="font-headline">
-                      What if Fonterra pays less?
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      If the final milk price is lower than the advance rate, the
-                      difference is simply added to your outstanding balance. We
-                      manage the risk, you get the cash flow.
-                    </p>
-                    <p className="mt-4 text-sm text-primary font-semibold">
-                      Example coming soon.
-                    </p>
-                  </CardContent>
-                </Card>
               </motion.div>
-              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }} viewport={{ once: true }}>
-                <Card className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                  <CardHeader>
-                    <CardTitle className="font-headline">
-                      What if Fonterra pays more?
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      If the final milk price is higher, the extra payment from
-                      Fonterra is credited to your Farmgate account, reducing your
-                      outstanding balance. You always get the full benefit.
-                    </p>
-                    <p className="mt-4 text-sm text-primary font-semibold">
-                      Example coming soon.
-                    </p>
-                  </CardContent>
-                </Card>
+              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 40 }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }} viewport={{ once: true }} className="h-full flex">
+                <Card className="shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col">
+                <CardHeader>
+                  <CardTitle className="font-headline">
+                    What if Fonterra pays more?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    If the final milk price is higher, the extra payment from
+                    Fonterra is credited to your Farmgate account, reducing your
+                    outstanding balance. You always get the full benefit.
+                  </p>
+                  <p className="mt-4 text-sm text-primary font-semibold">
+                    Example coming soon.
+                  </p>
+                </CardContent>
+              </Card>
               </motion.div>
             </div>
           </div>

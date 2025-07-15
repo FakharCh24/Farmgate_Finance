@@ -13,14 +13,14 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="rounded-lg overflow-hidden shadow-2xl">
+          <div className="rounded-lg overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="Team of Farmgate Access"
+              src="/tech.jpg"
+              alt="Technology team at Farmgate"
               width={600}
               height={400}
               className="w-full h-auto object-cover"
-              data-ai-hint="team meeting"
+              data-ai-hint="technology team"
             />
           </div>
           <div className="space-y-6">
@@ -41,14 +41,14 @@ export default function AboutPage() {
               Our mission is to empower New Zealand dairy farmers by providing them with the financial tools they need to thrive. We believe that by eliminating the long wait for milk payments, we can help farmers invest in their operations, manage expenses with confidence, and build more resilient and prosperous businesses for generations to come.
             </p>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-2xl lg:order-1">
+          <div className="rounded-lg overflow-hidden shadow-2xl lg:order-1 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="New Zealand farm landscape"
+              src="/shakehand.jpg"
+              alt="Handshake partnership"
               width={600}
               height={400}
               className="w-full h-auto object-cover"
-              data-ai-hint="farm landscape"
+              data-ai-hint="handshake partnership"
             />
           </div>
         </div>
