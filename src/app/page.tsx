@@ -55,7 +55,7 @@ function AboutUsPreview() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-105">
              <Image
-              src="/newzealand.jpg"
+              src="/Newzealand.jpg"
               alt="New Zealand landscape"
               width={600}
               height={200}
