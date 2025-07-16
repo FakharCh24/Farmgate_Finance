@@ -7,20 +7,17 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const Logo = () => (
-  <div className="flex items-center gap-0">
-    {/* Milk can with arrow SVG icon */}
-    <svg width="56" height="56" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 m-0 p-0">
-      <rect x="10" y="10" width="20" height="28" rx="6" fill="#234066"/>
-      <rect x="14" y="6" width="12" height="6" rx="2" fill="#234066"/>
-      <path d="M24 32v-8m0 0l-4 4m4-4l4 4" stroke="#2E9B5B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M18 38c2 2 8 2 10 0" stroke="#234066" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
-    <span className="flex flex-col leading-tight text-xl font-bold font-headline text-primary m-0 p-0 -ml-2">
-      <span className="text-primary mb-[-2px]">FARMGATE</span>
-      <span className="text-accent mt-[-2px]">FINANCE</span>
-      </span>
-    </div>
-  );
+  <div className="flex items-center gap-2">
+    <Image
+      src="/fargate-logo.png"
+      alt="Farmgate Finance Logo"
+      width={160}
+      height={160}
+      className="h-40 w-40 object-contain"
+      priority
+    />
+  </div>
+);
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);

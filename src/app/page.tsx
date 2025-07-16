@@ -115,7 +115,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
             <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
-                Get 100% of your milk receivables TODAY <span className="mx-2">||</span>
+                Get 100% of your milk receivables TODAY with{' '}
                 <span className="text-accent">Farmgate Finance.</span>
             </h1>
             <p className={cn("mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 transition-all duration-1000 ease-out delay-300", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
