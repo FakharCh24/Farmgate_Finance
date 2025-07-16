@@ -2,97 +2,38 @@
 
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-import { UserPlus, ArrowLeftRight, Banknote, CheckCircle } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
-interface HowItWorksStep {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const howItWorksSteps: HowItWorksStep[] = [
+const steps = [
   {
-    icon: UserPlus,
-    title: 'Sign Up',
-    description: 'Sign up quickly and easily using your FarmSource credentials.',
+    title: 'Register',
+    description: 'Create your Farmgate Finance account using your FarmSource credentials.'
   },
   {
-    icon: ArrowLeftRight,
-    title: 'Data Transfer',
-    description: 'Your data is securely transferred from Fonterra to Farmgate daily.',
+    title: 'Daily Data Transfer',
+    description: 'Fonterra securely transfers your milk production and pricing data (kgMS, volume, quality) to us each day.'
   },
   {
-    icon: Banknote,
-    title: 'Get Paid',
-    description: 'Farmgate pays the full amount directly into your bank account.',
+    title: 'Advance Payment',
+    description: 'We advance 100% of your forecasted payment (less our fee and interest) directly to your nominated bank account.'
   },
   {
-    icon: CheckCircle,
     title: 'Settlement',
-    description: 'Fonterra pays Farmgate, completing the cycle. No hassle for you.',
-  },
+    description: 'When Fonterra makes the final payment, we settle your advance. If the final milk price is higher than forecast, we refund the extra to you. If the price is lower, we absorb the difference — you keep the full advance.'
+  }
 ];
 
-const AnimatedStepCard = ({
-  step,
-  index,
-  isVisible,
-}: {
-  step: HowItWorksStep;
-  index: number;
-  isVisible: boolean;
-}) => {
-  const Icon = step.icon;
-  return (
-    <div
-      className={cn(
-        'transition-all duration-700 ease-out',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      )}
-      style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
-    >
-      <Card className="h-full text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card border-2 border-[#2E9B5B] group-hover:border-[#2E9B5B]">
-        <div className="absolute -top-4 -right-4 text-8xl font-bold text-primary/5 group-hover:text-[#2E9B5B]/20 transition-colors duration-300">
-          0{index + 1}
-        </div>
-        <CardHeader className="flex flex-col items-center justify-center">
-          <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-[#2E9B5B] group-hover:text-white">
-            <Icon className="h-8 w-8" />
-          </div>
-          <CardTitle className="font-headline text-xl">{step.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-[#2E9B5B] text-sm">{step.description}</p>
-        </CardContent>
-      </Card>
-    </div>
-  );
-};
-
 export function HowItWorksSection() {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
-
   return (
-    <section
-      id="how-it-works"
-      ref={ref}
-      className={cn(
-        'w-full py-20 md:py-28 bg-gray-50/50 overflow-hidden transition-all duration-1000 ease-out',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      )}
-    >
+    <section className="w-full py-20 md:py-28 bg-gray-50/50 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
-            A Simple Path to Your Cash
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">
+            How It Works
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Four simple steps to unlock your earnings instantly. Powered by
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Farmgate Finance makes it simple for farmers to access their milk payments early.
           </p>
           <div className="mt-8 mb-12 flex flex-col items-center justify-center">
             <a
@@ -117,15 +58,59 @@ export function HowItWorksSection() {
             <span className="mt-2 text-xs text-[#2E9B5B] font-semibold tracking-wide bg-[#2E9B5B]/10 px-2 py-0.5 rounded">Official Partner</span>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {howItWorksSteps.map((step, index) => (
-            <AnimatedStepCard
-              key={index}
-              step={step}
-              index={index}
-              isVisible={isVisible}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {steps.map((step, idx) => (
+            <motion.div
+              key={step.title}
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 * idx }}
+              viewport={{ once: true }}
+              className="h-full flex"
+            >
+              <div className="bg-white border-2 border-[#2E9B5B] rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card w-full flex flex-col items-center text-center p-8">
+                <div className="text-3xl font-bold text-[#2E9B5B] mb-2">{idx + 1}</div>
+                <h3 className="text-xl font-bold mb-2 text-[#234066]">{step.title}</h3>
+                <p className="text-muted-foreground text-base">{step.description}</p>
+              </div>
+            </motion.div>
           ))}
+        </div>
+        <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 border border-[#2E9B5B] mt-8">
+          <h3 className="text-2xl font-bold text-[#234066] mb-4">Example scenario</h3>
+          <ul className="list-disc pl-6 text-base text-muted-foreground space-y-2 mb-4">
+            <li>At the start of the season, Fonterra forecasts a milk price of <span className="font-bold text-[#234066]">$9.80/kgMS</span>.</li>
+            <li>Farmgate Finance establishes a Milk Price Reserve (MPR) floor of <span className="font-bold text-[#234066]">$9.30/kgMS</span> to protect your breakeven point.</li>
+            <li>For an average farmer producing <span className="font-bold text-[#234066]">176,875 kgMS</span>, the total expected payout over the season is approximately <span className="font-bold text-[#234066]">$1,742,769</span> based on the $9.80/kgMS forecast.</li>
+          </ul>
+          <div className="mb-2 font-bold text-[#234066]">During the season:</div>
+          <ul className="list-disc pl-6 text-base text-muted-foreground mb-4">
+            <li>Farmgate Finance advances monthly payments aligned with Fonterra’s forecast and payment schedule — giving you early access to your income and smoothing your cashflow.</li>
+          </ul>
+          <div className="mb-2 font-bold text-[#234066]">At the end of the season:</div>
+          <ul className="list-disc pl-6 text-base text-muted-foreground">
+            <li>If the final milk price is <span className="font-bold text-[#234066]">$10.00/kgMS</span> (above forecast):
+              <ul className="list-disc pl-6">
+                <li>You receive the full benefit of this price increase.</li>
+                <li>The total payout is reconciled at $10.00/kgMS, and you are paid the difference between what was advanced based on the $9.80/kgMS forecast and the final price of $10.00/kgMS.</li>
+              </ul>
+            </li>
+            <li>If the final milk price falls below forecast (e.g., <span className="font-bold text-[#234066]">$9.20/kgMS</span>):
+              <ul className="list-disc pl-6">
+                <li>Farmgate Finance absorbs the shortfall down to the $9.30/kgMS floor.</li>
+                <li>You keep your advance — no repayments required — ensuring you’re protected from downside risk.</li>
+              </ul>
+            </li>
+          </ul>
+          <div className="mt-4 bg-[#F6FAF7] rounded-lg p-4 border border-[#2E9B5B]/30">
+            <h4 className="text-lg font-semibold text-[#234066] mb-2">Key message for farmers:</h4>
+            <ul className="list-disc pl-5 text-sm text-[#234066] space-y-1">
+              <li><span className="font-semibold">This is a true cashflow facility</span> — you get certainty, liquidity, and protection for your breakeven point.</li>
+              <li>If the milk price rises, you keep <span className="font-semibold">100% of the upside above forecast</span>.</li>
+              <li>If the milk price falls, Farmgate Finance absorbs the difference down to the agreed floor.</li>
+              <li>You receive monthly payments of <span className="font-semibold">100% of the milk supplied</span> aligned with Fonterra’s schedule — no waiting for retro adjustments.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -115,11 +115,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
             <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
-                Get 100% of your milk receivables TODAY with{' '}
-                <span className="text-accent">Farmgate Finance.</span>
+                Advance Your Fonterra Milk Receivables Today with{' '}
+                <span style={{ color: '#2E9B5B' }}>Farmgate Finance</span>
             </h1>
             <p className={cn("mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 transition-all duration-1000 ease-out delay-300", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
-                Why wait till next year to get paid for your milk? Get paid NOW.
+                Farmgate Finance helps New Zealand dairy farmers get paid upfront for their Fonterra milk receivables. Our advance payment service gives you immediate access to 100% of your forecasted milk payout, improving your cashflow and helping you plan with certainty.
             </p>
             <div className={cn("mt-8 flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 ease-out delay-500", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">

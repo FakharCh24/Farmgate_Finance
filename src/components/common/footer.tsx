@@ -28,20 +28,20 @@ export function Footer() {
 
   return (
     <footer className="bg-gray-100 border-t">
-      <div className="container mx-auto px-4 md:px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 pt-4 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <Logo />
-            <p className="text-sm text-muted-foreground">
-              Farmgate Finance Limited (Company Number 9356952)
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Auckland – Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
-              Hamilton – 17 Home Straight, Te Rapa, 3241, New Zealand<br />
-              Christchurch – Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand<br />
-              Invercargill – 136 Spey Street, Invercargill, 9810, New Zealand
-            </p>
+          <div className="space-y-2 mt-0">
+            <div className="-mt-14 mb-0 flex flex-col items-start -space-y-2">
+              <Logo />
+              <div className="text-sm text-muted-foreground -mt-2">
+                Farmgate Finance Limited (Company Number 9356952)
+              </div>
+              <div className="text-sm text-muted-foreground">
+                📍 Auckland — Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
+                📍 Christchurch — Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand
+              </div>
+            </div>
           </div>
 
           {/* Navigation Links */}
@@ -64,14 +64,14 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 Email:{' '}
-                <a href="mailto:info@farmgatefinance.com" className="transition-colors hover:text-accent focus:text-accent active:text-accent">
-                  info@farmgatefinance.com
+                <a href="mailto:info@farmgatefinance.co.nz" className="transition-colors hover:text-accent focus:text-accent active:text-accent">
+                  info@farmgatefinance.co.nz
                 </a>
               </li>
               <li>
                 Phone:{' '}
                 <a href="tel:+6499505891" className="transition-colors hover:text-accent focus:text-accent active:text-accent">
-                  +64 (09)9505891
+                  +64 (09) 950 5891
                 </a>
               </li>
             </ul>
@@ -81,7 +81,7 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-semibold mb-4">Follow Us</h3>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/farmgate-finance-limited/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition-colors hover:text-accent focus:text-accent active:text-accent"
@@ -91,12 +91,12 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear || new Date().getFullYear()} Farmgate Finance Ltd. All rights reserved.</p>
-          <p className="mt-2">
-            <Link href="/terms" className="transition-colors hover:text-accent focus:text-accent active:text-accent">Terms & Conditions</Link>
-          </p>
-        </div>
+      </div>
+      <div className="border-t pt-6 pb-2 text-center text-sm text-muted-foreground w-full">
+        <p>&copy; {currentYear || new Date().getFullYear()} Farmgate Finance Ltd. All rights reserved.</p>
+        <p className="mt-2">
+          <Link href="/terms" className="transition-colors hover:text-accent focus:text-accent active:text-accent">Terms & Conditions</Link>
+        </p>
       </div>
     </footer>
   );

@@ -4,6 +4,7 @@ import { ArrowUpRight, Banknote, Cpu, FileText, ShieldCheck } from 'lucide-react
 import Image from 'next/image';
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 interface Partner {
   name: string;
@@ -15,6 +16,7 @@ interface PartnerSectionProps {
   title: string;
   icon: LucideIcon;
   list: Partner[];
+  description?: ReactNode;
 }
 
 const PartnerCard = ({ partner }: { partner: Partner }) => (
@@ -40,12 +42,17 @@ const PartnerCard = ({ partner }: { partner: Partner }) => (
   </Link>
 );
 
-const PartnerSection = ({ title, icon: Icon, list }: PartnerSectionProps) => (
+const PartnerSection = ({ title, icon: Icon, list, description }: PartnerSectionProps) => (
   <section className="mb-16">
     <div className="flex items-center gap-4 mb-8">
       <Icon className="h-8 w-8 text-primary" />
       <h2 className="text-3xl font-bold font-headline">{title}</h2>
     </div>
+    {description && (
+      <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-4 border-l-4 border-primary/40 pl-4">
+        {description}
+      </div>
+    )}
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {list.map((partner) => (
         <PartnerCard key={partner.name} partner={partner} />
@@ -65,12 +72,75 @@ export default function PartnersPage() {
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
             We collaborate with industry leaders to provide you with a seamless and secure financial experience.
           </p>
+          <div className="flex justify-center items-center mt-8">
+            <a href="https://fonterra.com" target="_blank" rel="noopener noreferrer" className="block group flex flex-col items-center">
+              <div className="relative w-40 h-20">
+                <Image
+                  src="/fonterra.png"
+                  alt="Fonterra logo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-contain"
+                  data-ai-hint="Fonterra logo"
+                />
+              </div>
+              <div className="text-sm font-medium text-muted-foreground group-hover:text-primary flex items-center justify-center mt-1 ml-6">
+                Fonterra
+                <ArrowUpRight className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </a>
+          </div>
+          <div className="max-w-xl mx-auto mt-4 bg-primary/5 border border-primary/10 rounded-lg p-4 text-center shadow-sm">
+            <h2 className="text-lg font-semibold text-primary mb-1">Strategic Partner – Fonterra</h2>
+            <p className="text-sm text-muted-foreground mb-1">
+              Fonterra is a key partner for Farmgate Finance, as New Zealand’s largest company and the backbone of our dairy sector. We work closely with Fonterra to receive daily, accurate data about your milk production and pricing, enabling us to calculate and advance payments reliably.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Fonterra’s subsidiary, FarmSource, manages our relationship with farmers. Through FarmSource, we securely connect with your credentials, access your production data, and ensure that your payments are processed efficiently.
+            </p>
+          </div>
         </div>
 
-        <PartnerSection title={partners.banking.title} icon={Banknote} list={partners.banking.list} />
-        <PartnerSection title={partners.technology.title} icon={Cpu} list={partners.technology.list} />
-        <PartnerSection title={partners.risk.title} icon={ShieldCheck} list={partners.risk.list} />
-        <PartnerSection title={partners.accounting.title} icon={FileText} list={partners.accounting.list} />
+        <PartnerSection
+          title={partners.banking.title}
+          icon={Banknote}
+          list={partners.banking.list}
+          description={
+            'Farmgate Finance and the banks offer different but complementary financial solutions for farmers. While we may compete in some areas, we work closely with all major New Zealand banks to ensure payments flow smoothly.All major banks accept payments from Farmgate Finance, and we coordinate with them, so your financial arrangements work seamlessly alongside your existing bank facilities.'
+          }
+        />
+        <PartnerSection
+          title={partners.technology.title}
+          icon={Cpu}
+          list={partners.technology.list}
+          description={
+            <div>
+              <div className="mb-1">Farmgate Finance relies on a trusted group of technology partners whose software and systems underpin the efficiency, security, and reliability of our service. These partners help us automate processes, minimize errors, and ensure fast, secure, and reliable service for farmers.</div>
+              <ul className="space-y-0.5 pl-3">
+                <li><span className="font-semibold">Datacom:</span> New Zealand’s largest software development company, providing robust infrastructure for our core systems.</li>
+                <li><span className="font-semibold">DanceRace:</span> A UK-based software provider making strong inroads globally, known for excellent service and innovative financial solutions.</li>
+                <li><span className="font-semibold">Olea:</span> A leading Singaporean technology company with relationships with major global banks such as Standard Chartered and BBVA.</li>
+                <li><span className="font-semibold">Hermes Data Systems:</span> A New Zealand success story with proven expertise transferring financial data securely between clients and banks across New Zealand, Australia, and the UK.</li>
+              </ul>
+            </div>
+          }
+        />
+        <PartnerSection
+          title={partners.risk.title}
+          icon={ShieldCheck}
+          list={partners.risk.list}
+          description={
+            'Farmgate Finance works with Jarden to help manage milk price risk. Jarden arranges futures contracts based on milk price forecasts. This allows us to protect both you and us from large swings in milk prices, providing certainty and stability in your advance payments.'
+          }
+        />
+        <PartnerSection
+          title={partners.accounting.title}
+          icon={FileText}
+          list={partners.accounting.list}
+          description={
+            'We seamlessly integrate with your accounting software, including Xero, MYOB, QuickBooks, Reckon, Sage, and FarmFocus. Once we receive your updated production data from Fonterra, we process your payment and automatically update your accounting package — saving you time and reducing the risk of manual data entry errors.'
+          }
+        />
 
       </div>
     </div>
