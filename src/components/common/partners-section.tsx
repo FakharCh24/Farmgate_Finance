@@ -42,21 +42,21 @@ export function PartnersSection() {
                 }}
               >
                 <div
-                  className="flex justify-center items-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                >
-                  <Link href={partner.website} target="_blank" rel="noopener noreferrer">
-                    <div className="relative w-[140px] h-[40px]">
-                      <Image
-                        src={partner.logoUrl}
-                        alt={`${partner.name} logo`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-contain"
-                        data-ai-hint="company logo"
-                      />
-                    </div>
-                  </Link>
-                </div>
+                className="flex justify-center items-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              >
+                <Link href={partner.website} target="_blank" rel="noopener noreferrer">
+                  <div className="relative w-36 h-16 flex items-center justify-center">
+                    <Image
+                      src={partner.logoUrl}
+                      alt={`${partner.name} logo`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-contain"
+                      data-ai-hint="company logo"
+                    />
+                  </div>
+                </Link>
+              </div>
               </motion.div>
             ))}
           </motion.div>

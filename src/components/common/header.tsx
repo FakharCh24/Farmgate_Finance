@@ -40,8 +40,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-accent',
-                pathname === link.href ? 'text-accent' : 'text-muted-foreground'
+                'text-sm font-medium text-[#234066] transition-colors hover:text-accent',
+                pathname === link.href ? 'text-accent' : ''
               )}
             >
               {link.label}
@@ -49,10 +49,10 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="ghost">
+          <Button asChild style={{ backgroundColor: '#2E9B5B', color: '#fff' }}>
             <Link href="/login">Login</Link>
           </Button>
-          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+          <Button asChild style={{ backgroundColor: '#2E9B5B', color: '#fff' }}>
             <Link href="/login">Register</Link>
           </Button>
         </div>
@@ -77,8 +77,8 @@ export function Header() {
                       href={link.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        'text-lg font-medium transition-colors hover:text-accent',
-                        pathname === link.href ? 'text-accent' : 'text-muted-foreground'
+                        'text-lg font-medium text-[#234066] transition-colors hover:text-accent',
+                        pathname === link.href ? 'text-accent' : ''
                       )}
                     >
                       {link.label}
@@ -86,10 +86,10 @@ export function Header() {
                   ))}
                 </nav>
                 <div className="mt-8 flex flex-col gap-4">
-                  <Button asChild variant="outline" onClick={() => setIsOpen(false)}>
+                  <Button asChild style={{ backgroundColor: '#2E9B5B', color: '#fff' }} onClick={() => setIsOpen(false)}>
                     <Link href="/login">Login</Link>
                   </Button>
-                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
+                  <Button asChild style={{ backgroundColor: '#2E9B5B', color: '#fff' }} onClick={() => setIsOpen(false)}>
                     <Link href="/login">Register</Link>
                   </Button>
                 </div>

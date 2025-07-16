@@ -24,7 +24,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-headline">Our Story</h2>
+            <h2 className="text-3xl font-bold font-headline text-[#234066]">Our Story</h2>
             <p className="text-muted-foreground">
               Farmgate Finance was founded by a team of finance and technology experts with deep roots in New Zealand's agricultural sector. We saw firsthand how dairy farmers, the backbone of our economy, were hampered by outdated payment systems that delayed access to their hard-earned income.
             </p>
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
         <div className="mt-24 grid lg:grid-cols-2 gap-16 items-center">
            <div className="space-y-6 lg:order-2">
-            <h2 className="text-3xl font-bold font-headline">Our Mission</h2>
+            <h2 className="text-3xl font-bold font-headline text-[#234066]">Our Mission</h2>
             <p className="text-muted-foreground">
               Our mission is to empower New Zealand dairy farmers by providing them with the financial tools they need to thrive. We believe that by eliminating the long wait for milk payments, we can help farmers invest in their operations, manage expenses with confidence, and build more resilient and prosperous businesses for generations to come.
             </p>

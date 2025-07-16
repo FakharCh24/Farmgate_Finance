@@ -56,7 +56,7 @@ const AnimatedStepCard = ({
       )}
       style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
     >
-      <Card className="h-full text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card group-hover:border-[#2E9B5B]">
+      <Card className="h-full text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group bg-card border-2 border-[#2E9B5B] group-hover:border-[#2E9B5B]">
         <div className="absolute -top-4 -right-4 text-8xl font-bold text-primary/5 group-hover:text-[#2E9B5B]/20 transition-colors duration-300">
           0{index + 1}
         </div>
@@ -111,11 +111,6 @@ export function HowItWorksSection() {
                   data-ai-hint="company logo"
                   className="transition-transform duration-300"
                 />
-                <span className="absolute -top-2 -right-6 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 group-focus:translate-y-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#2E9B5B] drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4m3-4v8m0-8l-4 4m4-4l4 4" />
-                  </svg>
-                </span>
               </span>
               <span className="sr-only">(opens in new tab)</span>
             </a>
