@@ -38,7 +38,7 @@ export default function HomeClient() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full py-10 md:py-16 lg:py-20 overflow-hidden">
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
         <Image
           src="/Farm.jpg"
           alt="Farmgate Finance cashflow facility for NZ dairy farmers"
@@ -49,7 +49,7 @@ export default function HomeClient() {
           loading="eager"
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
+        <div className="container relative z-20 mx-auto px-4 md:px-6 text-center flex flex-col items-center justify-center h-full">
             <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 Advance Your Fonterra Milk Receivables Today with{' '}
                 <span style={{ color: '#2E9B5B' }}>Farmgate Finance</span>
