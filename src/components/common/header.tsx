@@ -50,7 +50,7 @@ export function Header() {
             <Link href="/login">Login</Link>
           </Button>
           <Button asChild style={{ backgroundColor: '#2E9B5B', color: '#fff' }}>
-            <Link href="/login">Register</Link>
+            <Link href="/login#register">Register</Link>
           </Button>
         </div>
         <div className="md:hidden">

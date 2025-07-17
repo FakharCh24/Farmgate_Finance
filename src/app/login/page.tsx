@@ -1,14 +1,23 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useRouter } from 'next/navigation';
 
 function LoginForm() {
+  const router = useRouter();
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    // TODO: Add authentication logic here
+    router.push('/');
+  }
   return (
-    <form className="space-y-4">
+    <form className="space-y-4" onSubmit={handleSubmit}>
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
         <Input id="email" type="email" placeholder="john.doe@example.com" required />
@@ -44,10 +53,22 @@ function RegisterForm() {
 
 
 export default function LoginPage() {
+  const [tab, setTab] = useState('login');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (window.location.hash === '#register') {
+        setTab('register');
+      } else {
+        setTab('login');
+      }
+    }
+  }, []);
+
   return (
     <div className="flex items-center justify-center py-16 md:py-24 bg-gray-50 min-h-[calc(100vh-8rem)]">
       <div className="w-full max-w-md mx-4">
-        <Tabs defaultValue="login" className="w-full">
+        <Tabs value={tab} onValueChange={setTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Login</TabsTrigger>
             <TabsTrigger value="register">Register</TabsTrigger>
