@@ -95,7 +95,7 @@ export default function HomeClient() {
               <p className="text-muted-foreground">
                 No more waiting, no more uncertainty. Just simple, fast, and secure payments so you can focus on what you do best: farming.
               </p>
-              <div className="flex justify-center w-full mt-8">
+              <div className="mt-8">
                 <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
                   <Link href="/login">
                     Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
