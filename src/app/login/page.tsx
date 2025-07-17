@@ -60,12 +60,6 @@ export default function LoginPage() {
               </CardHeader>
               <CardContent>
                 <LoginForm />
-                 <div className="mt-6 text-center text-sm">
-                  <p className="text-muted-foreground">Or log in using a provider</p>
-                  <Button variant="outline" className="w-full mt-2">
-                    Login with FarmSource
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           </TabsContent>
@@ -77,12 +71,6 @@ export default function LoginPage() {
               </CardHeader>
               <CardContent>
                 <RegisterForm />
-                <div className="mt-6 text-center text-sm">
-                  <p className="text-muted-foreground">Or register using a provider</p>
-                  <Button variant="outline" className="w-full mt-2">
-                    Register with FarmSource
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           </TabsContent>

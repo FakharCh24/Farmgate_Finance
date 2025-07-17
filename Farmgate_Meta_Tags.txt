@@ -1,0 +1,15 @@
+Home Page:
+<title>Farmgate Finance | Cashflow Facility for NZ Dairy Farmers</title>
+<meta name="description" content="Get paid upfront for your Fonterra milk receivables with Farmgate Finance. Cashflow certainty and price protection for NZ dairy farmers." />
+
+How It Works Page:
+<title>How It Works | Farmgate Finance Milk Receivables Cashflow</title>
+<meta name="description" content="Learn how Farmgate Finance gives NZ farmers 100% monthly payment on milk supplied — with cashflow certainty and downside price protection." />
+
+Partners Page:
+<title>Trusted Partners | Farmgate Finance NZ Dairy Cashflow</title>
+<meta name="description" content="Meet Farmgate Finance partners — working with NZ banks, Fonterra, FarmSource and leading technology firms for reliable farmer cashflow." />
+
+FAQ Page:
+<title>FAQs | Farmgate Finance Milk Receivable Advances NZ</title>
+<meta name="description" content="Answers about Farmgate Finance: cashflow facility, payments, milk price protection, banking arrangements and Fonterra alignment." />

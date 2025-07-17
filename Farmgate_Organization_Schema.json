@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Farmgate Finance",
+  "url": "https://www.farmgatefinance.com",
+  "logo": "https://www.farmgatefinance.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+64-09-950-5891",
+    "contactType": "Customer Service",
+    "areaServed": "NZ",
+    "availableLanguage": ["English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Level 10, 11 Britomart Place",
+    "addressLocality": "Auckland CBD",
+    "addressRegion": "Auckland",
+    "postalCode": "1010",
+    "addressCountry": "NZ"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/farmgate-finance"
+  ]
+}

@@ -6,6 +6,11 @@ import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+export const metadata = {
+  title: 'Trusted Partners | Farmgate Finance NZ Dairy Cashflow',
+  description: 'Meet Farmgate Finance partners — working with NZ banks, Fonterra, FarmSource and leading technology firms for reliable farmer cashflow.',
+};
+
 interface Partner {
   name: string;
   logoUrl: string;
@@ -20,17 +25,18 @@ interface PartnerSectionProps {
 }
 
 const PartnerCard = ({ partner }: { partner: Partner }) => (
-  <Link href={partner.website} target="_blank" rel="noopener noreferrer" className="block group">
+  <Link href={partner.website} target="_blank" rel="nofollow noopener noreferrer" className="block group">
     <Card className="h-full flex flex-col items-center justify-center p-4 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
       <CardContent className="p-0 flex flex-col items-center justify-center space-y-2">
         <div className="relative w-40 h-20">
           <Image
             src={partner.logoUrl}
-            alt={`${partner.name} logo`}
+            alt={`Logo of ${partner.name} - Farmgate Finance partner for NZ dairy cashflow`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-contain"
             data-ai-hint="company logo"
+            loading="lazy"
           />
         </div>
         <div className="text-sm font-medium text-muted-foreground group-hover:text-primary flex items-center">
@@ -67,21 +73,22 @@ export default function PartnersPage() {
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-            Our Trusted Partners
+            Trusted Partners | Farmgate Finance NZ Dairy Cashflow
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            We collaborate with industry leaders to provide you with a seamless and secure financial experience.
+            Meet Farmgate Finance partners — working with NZ banks, Fonterra, FarmSource and leading technology firms for reliable farmer cashflow.
           </p>
           <div className="flex justify-center items-center mt-8">
-            <a href="https://fonterra.com" target="_blank" rel="noopener noreferrer" className="block group flex flex-col items-center">
+            <a href="https://fonterra.com" target="_blank" rel="nofollow noopener noreferrer" className="block group flex flex-col items-center">
               <div className="relative w-40 h-20">
                 <Image
                   src="/fonterra.png"
-                  alt="Fonterra logo"
+                  alt="Logo of Fonterra - Farmgate Finance partner for NZ dairy cashflow"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-contain"
                   data-ai-hint="Fonterra logo"
+                  loading="lazy"
                 />
               </div>
               <div className="text-sm font-medium text-muted-foreground group-hover:text-primary flex items-center justify-center mt-1 ml-6">
@@ -100,7 +107,6 @@ export default function PartnersPage() {
             </p>
           </div>
         </div>
-
         <PartnerSection
           title={partners.banking.title}
           icon={Banknote}
@@ -141,7 +147,6 @@ export default function PartnersPage() {
             'We seamlessly integrate with your accounting software, including Xero, MYOB, QuickBooks, Reckon, Sage, and FarmFocus. Once we receive your updated production data from Fonterra, we process your payment and automatically update your accounting package — saving you time and reducing the risk of manual data entry errors.'
           }
         />
-
       </div>
     </div>
   );

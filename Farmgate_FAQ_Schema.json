@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I get paid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Farmgate Finance advances you 100% of the value of the milk you supply, based on Fonterra’s forecast milk price, less our administration fee and interest charges. You receive these payments monthly, aligned with Fonterra’s scheduled payment dates — no waiting for retro adjustments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the Fonterra retro payment is more than I’ve already received?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the final milk price is higher than forecast, Farmgate Finance reconciles your account at the end of the season and you receive the full benefit of the price increase above forecast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the Fonterra retro payment is less than what I’ve received?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the final milk price is lower than forecast, Farmgate Finance absorbs the difference down to the agreed Milk Price Reserve floor — you keep your full advance and no repayment is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this facility work with my bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work closely with your bank to ensure timely transfers and that all your bank’s requirements are met, so your Farmgate Finance facility integrates seamlessly with your existing banking arrangements."
+      }
+    }
+  ]
+}
