@@ -50,7 +50,7 @@ export default function HomeClient() {
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center flex flex-col items-center justify-center h-full">
-            <h1 className={cn("text-4xl md:text-5xl lg:text-6xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+            <h1 className={cn("text-3xl md:text-4xl lg:text-5xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 Advance Your Fonterra Milk Receivables Today with{' '}
                 <span style={{ color: '#2E9B5B' }}>Farmgate Finance</span>
             </h1>
@@ -72,11 +72,13 @@ export default function HomeClient() {
 
       {/* Partners Section */}
       <AnimatedSection>
-        <div className="text-center mt-4">
-          <Link href="/partners" className="text-accent underline font-medium">See our trusted partners</Link>
-        </div>
         <PartnersSection />
       </AnimatedSection>
+
+      {/* See Trusted Partners Link - standalone, lower on the page */}
+      <div className="text-center mt-4">
+        <Link href="/partners" className="text-accent underline font-medium">See our trusted partners</Link>
+      </div>
 
       {/* How It Works Section */}
       <HowItWorksSection />
@@ -226,7 +228,7 @@ export default function HomeClient() {
             Ready to Dive Deeper?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-            Make an appointment with one of our Business Development Managers to discuss how <span className="text-[#2E9B5B] font-semibold">Farmgate Access</span> can benefit your farm.
+            Make an appointment with one of our Business Development Managers to discuss how <span className="text-[#2E9B5B] font-semibold">Farmgate Finance</span> can benefit your farm.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white shadow-lg">

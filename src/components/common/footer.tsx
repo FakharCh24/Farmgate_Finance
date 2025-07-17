@@ -36,10 +36,13 @@ export function Footer() {
               <Logo />
               <div className="text-sm text-muted-foreground -mt-2">
                 Farmgate Finance Limited (Company Number 9356952)
+
               </div>
+              <br />
               <div className="text-sm text-muted-foreground">
-                📍 Auckland — Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
-                📍 Christchurch — Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand
+                Auckland — Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
+                <br />
+                Christchurch — Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand
               </div>
             </div>
           </div>
