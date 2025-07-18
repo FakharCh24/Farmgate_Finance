@@ -81,6 +81,7 @@ export function Footer() {
           </div>
 
           {/* Social Links */}
+          {/**
           <div>
             <h3 className="font-headline font-semibold mb-4">Follow Us</h3>
             <a
@@ -93,6 +94,7 @@ export function Footer() {
               <Linkedin className="h-6 w-6" />
             </a>
           </div>
+          */}
         </div>
       </div>
       <div className="border-t pt-6 pb-2 text-center text-sm text-muted-foreground w-full">
