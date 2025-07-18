@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 function AnimatedSection({ children, className }: { children: React.ReactNode, className?: string }) {
@@ -30,10 +30,28 @@ function AnimatedSection({ children, className }: { children: React.ReactNode, c
 }
 
 export default function HomeClient() {
-  const [isMounted, setIsMounted] = useState(false);
+  const [show, setShow] = useState(false);
   useEffect(() => {
-    setIsMounted(true);
+    setShow(true);
   }, []);
+
+  // Video autoplay on scroll
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const { ref: videoSectionRef, isVisible: videoVisible } = useScrollAnimation({ threshold: 0.5 });
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (videoVisible) {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    } else {
+      if (!video.paused) {
+        video.pause();
+      }
+    }
+  }, [videoVisible]);
 
   return (
     <div className="flex flex-col">
@@ -50,14 +68,14 @@ export default function HomeClient() {
         />
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="container relative z-20 mx-auto px-4 md:px-6 text-center flex flex-col items-center justify-center h-full">
-            <h1 className={cn("text-3xl md:text-4xl lg:text-5xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+            <h1 className={cn("text-3xl md:text-4xl lg:text-5xl font-bold font-headline tracking-tighter text-white leading-tight transition-all duration-1000 ease-out", show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 Advance Your Fonterra Milk Receivables Today with{' '}
                 <span style={{ color: '#2E9B5B' }}>Farmgate Finance</span>
             </h1>
-            <p className={cn("mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 transition-all duration-1000 ease-out delay-300", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+            <p className={cn("mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-200 transition-all duration-1000 ease-out delay-300", show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 Farmgate Finance helps New Zealand dairy farmers get paid upfront for their Fonterra milk receivables. Our advance payment service gives you immediate access to 100% of your forecasted milk payout, improving your cashflow and helping you plan with certainty.
             </p>
-            <div className={cn("mt-8 flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 ease-out delay-500", isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+            <div className={cn("mt-8 flex flex-col sm:flex-row justify-center gap-4 transition-all duration-1000 ease-out delay-500", show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                 <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
                 <Link href="/login">
                     Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
@@ -84,44 +102,43 @@ export default function HomeClient() {
       <HowItWorksSection />
 
       {/* Video Section */}
-      <AnimatedSection className="w-full py-10 md:py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
-                Unlock Your Cash Flow in 90 Seconds
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Watch our short video to see exactly how Farmgate Access can transform your dairy business by giving you immediate access to the money you've already earned.
-              </p>
-              <p className="text-muted-foreground">
-                No more waiting, no more uncertainty. Just simple, fast, and secure payments so you can focus on what you do best: farming.
-              </p>
-              <div className="mt-8">
-                <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
-                  <Link href="/login">
-                    Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+      <div ref={videoSectionRef}>
+        <AnimatedSection className="w-full py-10 md:py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">
+                  Unlock Your Cash Flow in 60 Seconds
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                  Watch our short video to see exactly how Farmgate Access can transform your dairy business by giving you immediate access to the money you've already earned.
+                </p>
+                <p className="text-muted-foreground">
+                  No more waiting, no more uncertainty. Just simple, fast, and secure payments so you can focus on what you do best: farming.
+                </p>
+                <div className="mt-8">
+                  <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white">
+                    <Link href="/login">
+                      Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center relative shadow-xl overflow-hidden group">
-              <Image
-                src="https://placehold.co/1280x720.png"
-                alt="How it works diagram showing advance milk payment process"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg transition-transform duration-500 group-hover:scale-105"
-                data-ai-hint="farm video"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/30 rounded-lg flex items-center justify-center transition-colors group-hover:bg-black/40">
-                <PlayCircle className="h-20 w-20 text-white/80 transition-all duration-300 group-hover:text-white group-hover:scale-110 cursor-pointer" />
+              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center relative shadow-xl overflow-hidden group">
+                <video
+                  ref={videoRef}
+                  src="/video.mp4"
+                  controls
+                  poster="/vid.png"
+                  className="rounded-lg w-full h-full object-cover"
+                  preload="none"
+                  muted
+                />
               </div>
             </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </div>
 
       {/* Transparent Pricing / Cost & Scenarios Section */}
       <AnimatedSection className="w-full py-10 md:py-16 bg-white">
@@ -144,7 +161,7 @@ export default function HomeClient() {
                 </CardHeader>
                 <CardContent className="space-y-4 text-primary/80">
                   <p>
-                    We charge a small administration fee on the receivables we purchase. We also charge interest for the funds advanced based on the time before we get paid. The interest rate is generally the same as or lower than the overdraft rate charged by your bank. There are no hidden fees.
+                    We charge a small administration fee on the receivables we purchase. There are no hidden fees.
                   </p>
                 </CardContent>
               </Card>
@@ -158,7 +175,7 @@ export default function HomeClient() {
                 </CardHeader>
                 <CardContent className="space-y-4 text-primary/80">
                   <p>
-                    Interest is calculated daily on the outstanding balance and charged monthly. Our rates are typically equal to or lower than bank overdraft rates.
+                    We also charge interest for the funds advanced based on the time before we get paid. The interest rate is generally the same as or lower than the overdraft rate charged by your bank.
                   </p>
                 </CardContent>
               </Card>

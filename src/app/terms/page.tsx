@@ -1,11 +1,10 @@
-'use client';
+import TermsClient from './TermsClient';
 
-import { useEffect, useState } from 'react';
+export const metadata = {
+  title: 'Terms and Conditions | Farmgate Finance',
+  description: 'Read the Terms and Conditions for using Farmgate Finance. Learn about your rights, responsibilities, and our commitment to transparency for New Zealand dairy farmers.'
+};
 
 export default function TermsPage() {
-  return (
-    <div className="flex items-center justify-center min-h-[60vh]">
-      <h1 className="text-4xl font-bold text-[#234066]">Terms and Conditions</h1>
-    </div>
-  );
+  return <TermsClient />;
 }

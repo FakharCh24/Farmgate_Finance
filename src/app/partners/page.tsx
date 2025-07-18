@@ -76,11 +76,11 @@ export default function PartnersPage() {
             Trusted Partners | Farmgate Finance NZ Dairy Cashflow
           </h1>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Meet Farmgate Finance partners — working with NZ banks, Fonterra, FarmSource and leading technology firms for reliable farmer cashflow.
+            Meet Farmgate Finance's partners – working with Fonterra, NZ Banks and leading technology companies for reliable farmer cashflow.
           </p>
           <div className="flex justify-center items-center mt-8">
             <a href="https://fonterra.com" target="_blank" rel="nofollow noopener noreferrer" className="block group flex flex-col items-center">
-              <div className="relative w-40 h-20">
+              <div className="relative w-80 h-40">
                 <Image
                   src="/fonterra.png"
                   alt="Logo of Fonterra - Farmgate Finance partner for NZ dairy cashflow"
@@ -100,7 +100,7 @@ export default function PartnersPage() {
           <div className="max-w-xl mx-auto mt-4 bg-primary/5 border border-primary/10 rounded-lg p-4 text-center shadow-sm">
             <h2 className="text-lg font-semibold text-primary mb-1">Strategic Partner – Fonterra</h2>
             <p className="text-sm text-muted-foreground mb-1">
-              Fonterra is a key partner for Farmgate Finance, as New Zealand’s largest company and the backbone of our dairy sector. We work closely with Fonterra to receive daily, accurate data about your milk production and pricing, enabling us to calculate and advance payments reliably.
+            Fonterra, a key partner for Farmgate Finance, is New Zealand's largest company and the backbone of our dairy sector. We work closely with Fonterra to receive daily, accurate data about your milk production and pricing, enabling us to calculate and advance payments reliably.
             </p>
             <p className="text-sm text-muted-foreground">
               Fonterra’s subsidiary, FarmSource, manages our relationship with farmers. Through FarmSource, we securely connect with your credentials, access your production data, and ensure that your payments are processed efficiently.
@@ -125,7 +125,7 @@ export default function PartnersPage() {
               <ul className="space-y-0.5 pl-3">
                 <li><span className="font-semibold">Datacom:</span> New Zealand’s largest software development company, providing robust infrastructure for our core systems.</li>
                 <li><span className="font-semibold">DanceRace:</span> A UK-based software provider making strong inroads globally, known for excellent service and innovative financial solutions.</li>
-                <li><span className="font-semibold">Olea:</span> A leading Singaporean technology company with relationships with major global banks such as Standard Chartered and BBVA.</li>
+                <li><span className="font-semibold">Olea:</span> A leading Singapore based technology company with relationships with major global banks such as Standard Chartered and BBVA.</li>
                 <li><span className="font-semibold">Hermes Data Systems:</span> A New Zealand success story with proven expertise transferring financial data securely between clients and banks across New Zealand, Australia, and the UK.</li>
               </ul>
             </div>

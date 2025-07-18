@@ -76,6 +76,11 @@ export default function FAQPage() {
             })}
           </Accordion>
         </div>
+        <div className="flex justify-center mt-12">
+          <a href="/login" className="inline-flex items-center px-8 py-3 font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white rounded-lg text-lg shadow-lg transition-colors">
+            Get Started Now
+          </a>
+        </div>
       </div>
     </div>
   );

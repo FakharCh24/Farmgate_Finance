@@ -42,7 +42,7 @@ export function Footer() {
               <div className="text-sm text-muted-foreground">
                 Auckland — Level 10, 11 Britomart Place, Auckland CBD, 1010, New Zealand<br />
                 <br />
-                Christchurch — Awly Building, Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand
+                Christchurch — Level 4, 287-293 Durham Street North, Christchurch, 8013, New Zealand
               </div>
             </div>
           </div>
