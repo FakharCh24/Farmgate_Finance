@@ -29,7 +29,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-100 border-t">
       <div className="container mx-auto px-4 md:px-6 pt-4 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="space-y-2 mt-0">
             <div className="-mt-14 mb-0 flex flex-col items-start -space-y-2">
@@ -48,7 +48,7 @@ export function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div>
+          <div className="flex flex-col items-center lg:justify-center">
             <h3 className="font-headline font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {navLinks.map((link) => (
