@@ -127,7 +127,7 @@ export default function HomeClient() {
               <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center relative shadow-xl overflow-hidden group">
                 <video
                   ref={videoRef}
-                  src="/video1.mp4"
+                  src="/video.mp4"
                   controls
                   poster="/vid.png"
                   className="rounded-lg w-full h-full object-cover"
