@@ -88,7 +88,7 @@ export default function LoginPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
-                <CardDescription>Join Farmgate Access to get paid faster.</CardDescription>
+                <CardDescription>Join Farmgate Finance to get paid faster.</CardDescription>
               </CardHeader>
               <CardContent>
                 <RegisterForm />
