@@ -52,8 +52,8 @@ export const partners = {
 
 export const faqs = [
   {
-    question: 'What is Farmgate Access?',
-    answer: 'Farmgate Access is a cashflow facility that allows New Zealand dairy farmers to receive advance payments for their Fonterra milk receivables, providing immediate access to their forecasted milk payout.'
+    question: 'What is Farmgate Finance?',
+    answer: 'Farmgate Finance is a cashflow facility that allows New Zealand dairy farmers to receive advance payments for their Fonterra milk receivables, providing immediate access to their forecasted milk payout.'
   },
   {
     question: 'How does the process work?',
@@ -76,12 +76,12 @@ export const faqs = [
     answer: 'Farmgate Finance takes data security seriously. All data is encrypted and handled in accordance with New Zealand privacy laws and industry best practices.'
   },
   {
-    question: 'Can I integrate Farmgate Access with my accounting software?',
-    answer: 'Yes, Farmgate Access is compatible with major accounting software packages, making reconciliation and reporting easy.'
+    question: 'Can I integrate Farmgate Finance with my accounting software?',
+    answer: 'Yes, Farmgate Finance is compatible with major accounting software packages, making reconciliation and reporting easy.'
   },
   {
-    question: 'Who is eligible for Farmgate Access?',
-    answer: 'Farmgate Access is available to New Zealand dairy farmers who supply Fonterra and meet our standard credit and operational criteria.'
+    question: 'Who is eligible for Farmgate Finance?',
+    answer: 'Farmgate Finance is available to New Zealand dairy farmers who supply Fonterra and meet our standard credit and operational criteria.'
   },
   {
     question: 'How quickly can I get set up?',
