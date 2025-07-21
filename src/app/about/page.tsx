@@ -80,7 +80,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-24 grid lg:grid-cols-2 gap-16 items-center">
-             <div className="space-y-6 lg:order-2">
+            <div className="space-y-6 lg:order-2">
               <h2 className="text-3xl font-bold font-headline text-[#234066]">Our Mission</h2>
               <p className="text-muted-foreground">
                 Our mission is to empower New Zealand dairy farmers by providing them with the financial tools they need to thrive. We believe that by eliminating the long wait for milk payments, we can help farmers invest in their operations, manage expenses with confidence, and build more resilient and prosperous businesses for generations to come.

@@ -25,37 +25,39 @@ export default function RootLayout({
           rel="stylesheet"
         />
         {/* Organization Schema Markup */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          'name': 'Farmgate Finance Limited',
-          'url': 'https://farmgatefinance.co.nz',
-          'logo': 'https://farmgatefinance.co.nz/fargate-logo.png',
-          'contactPoint': [{
-            '@type': 'ContactPoint',
-            'telephone': '+64-9-950-5891',
-            'contactType': 'customer service',
-            'email': 'info@farmgatefinance.co.nz',
-            'areaServed': 'NZ',
-            'availableLanguage': ['English']
-          }],
-          'address': [
-            {
-              '@type': 'PostalAddress',
-              'streetAddress': 'Level 10, 11 Britomart Place, Auckland CBD',
-              'addressLocality': 'Auckland',
-              'postalCode': '1010',
-              'addressCountry': 'NZ'
-            },
-            {
-              '@type': 'PostalAddress',
-              'streetAddress': 'Awly Building, Level 4, 287-293 Durham Street North',
-              'addressLocality': 'Christchurch',
-              'postalCode': '8013',
-              'addressCountry': 'NZ'
-            }
-          ]
-        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            'name': 'Farmgate Finance Limited',
+            'url': 'https://farmgatefinance.co.nz',
+            'logo': 'https://farmgatefinance.co.nz/fargate-logo.png',
+            'contactPoint': [{
+              '@type': 'ContactPoint',
+              'telephone': '+64-9-950-5891',
+              'contactType': 'customer service',
+              'email': 'info@farmgatefinance.co.nz',
+              'areaServed': 'NZ',
+              'availableLanguage': ['English']
+            }],
+            'address': [
+              {
+                '@type': 'PostalAddress',
+                'streetAddress': 'Level 10, 11 Britomart Place, Auckland CBD',
+                'addressLocality': 'Auckland',
+                'postalCode': '1010',
+                'addressCountry': 'NZ'
+              },
+              {
+                '@type': 'PostalAddress',
+                'streetAddress': 'Awly Building, Level 4, 287-293 Durham Street North',
+                'addressLocality': 'Christchurch',
+                'postalCode': '8013',
+                'addressCountry': 'NZ'
+              }
+            ]
+          })
+        }} />
       </head>
       <body
         className={cn(

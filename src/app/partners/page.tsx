@@ -100,10 +100,36 @@ export default function PartnersPage() {
           <div className="max-w-xl mx-auto mt-4 bg-primary/5 border border-primary/10 rounded-lg p-4 text-center shadow-sm">
             <h2 className="text-lg font-semibold text-primary mb-1">Strategic Partner – Fonterra</h2>
             <p className="text-sm text-muted-foreground mb-1">
-            Fonterra, a key partner for Farmgate Finance, is New Zealand's largest company and the backbone of our dairy sector. We work closely with Fonterra to receive daily, accurate data about your milk production and pricing, enabling us to calculate and advance payments reliably.
+              Fonterra, a key partner for Farmgate Finance, is New Zealand's largest company and the backbone of our dairy sector. We work closely with Fonterra to receive daily, accurate data about your milk production and pricing, enabling us to calculate and advance payments reliably.
             </p>
             <p className="text-sm text-muted-foreground">
               Fonterra’s subsidiary, FarmSource, manages our relationship with farmers. Through FarmSource, we securely connect with your credentials, access your production data, and ensure that your payments are processed efficiently.
+            </p>
+          </div>
+          {/* OLEA Partner Section */}
+          <div className="flex justify-center items-center mt-8">
+            <a href="https://olea.net" target="_blank" rel="nofollow noopener noreferrer" className="block group flex flex-col items-center">
+              <div className="relative w-80 h-40">
+                <Image
+                  src="/olea.png"
+                  alt="Logo of OLEA - Farmgate Finance global technology partner"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-contain"
+                  data-ai-hint="OLEA logo"
+                  loading="lazy"
+                />
+              </div>
+              <div className="text-sm font-medium text-muted-foreground group-hover:text-primary flex items-center justify-center mt-1 ml-6">
+                OLEA
+                <ArrowUpRight className="h-4 w-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </a>
+          </div>
+          <div className="max-w-xl mx-auto mt-4 bg-primary/5 border border-primary/10 rounded-lg p-4 text-center shadow-sm">
+            <h2 className="text-lg font-semibold text-primary mb-1">Global Technology Partner – OLEA</h2>
+            <p className="text-sm text-muted-foreground mb-1">
+              OLEA is a leading Singapore-based technology company with relationships with major global banks such as Standard Chartered and BBVA. As a global technology partner, OLEA brings international expertise and innovative solutions to Farmgate Finance, helping us deliver secure and efficient financial services to New Zealand farmers.
             </p>
           </div>
         </div>
@@ -118,14 +144,13 @@ export default function PartnersPage() {
         <PartnerSection
           title={partners.technology.title}
           icon={Cpu}
-          list={partners.technology.list}
+          list={partners.technology.list.filter((partner) => partner.name !== 'Olea')}
           description={
             <div>
               <div className="mb-1">Farmgate Finance relies on a trusted group of technology partners whose software and systems underpin the efficiency, security, and reliability of our service. These partners help us automate processes, minimize errors, and ensure fast, secure, and reliable service for farmers.</div>
               <ul className="space-y-0.5 pl-3">
                 <li><span className="font-semibold">Datacom:</span> New Zealand’s largest software development company, providing robust infrastructure for our core systems.</li>
                 <li><span className="font-semibold">DanceRace:</span> A UK-based software provider making strong inroads globally, known for excellent service and innovative financial solutions.</li>
-                <li><span className="font-semibold">Olea:</span> A leading Singapore based technology company with relationships with major global banks such as Standard Chartered and BBVA.</li>
                 <li><span className="font-semibold">Hermes Data Systems:</span> A New Zealand success story with proven expertise transferring financial data securely between clients and banks across New Zealand, Australia, and the UK.</li>
               </ul>
             </div>
