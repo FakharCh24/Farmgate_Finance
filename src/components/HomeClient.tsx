@@ -217,7 +217,7 @@ export default function HomeClient() {
                 Farmgate Finance was founded by a team of finance and technology experts with deep roots in New Zealand's agricultural sector. We saw firsthand how dairy farmers, the backbone of our economy, were hampered by outdated payment systems.
               </p>
               <p className="text-muted-foreground">
-                Driven by a passion for innovation, we built Farmgate Access: a simple, secure, and transparent platform to give farmers immediate control over their cash flow.
+                Driven by a passion for innovation, we built Farmgate Finance: a simple, secure, and transparent platform to give farmers immediate control over their cash flow.
               </p>
               <Button asChild variant="link" className="px-0">
                 <Link href="/about">
