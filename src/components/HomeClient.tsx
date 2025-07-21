@@ -118,7 +118,7 @@ export default function HomeClient() {
                   Unlock Your Cash Flow in 60 Seconds
                 </h2>
                 <p className="text-muted-foreground text-lg">
-                  Watch our short video to see exactly how Farmgate Access can transform your dairy business by giving you immediate access to the money you've already earned.
+                  Watch our short video to see exactly how Farmgate Finance can transform your dairy business by giving you immediate access to the money you've already earned.
                 </p>
                 <p className="text-muted-foreground">
                   No more waiting, no more uncertainty. Just simple, fast, and secure payments so you can focus on what you do best: farming.
@@ -256,7 +256,7 @@ export default function HomeClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="font-bold bg-[#2E9B5B] hover:bg-[#26884C] text-white shadow-lg">
-              <a href="https://outlook.office365.com/owa/calendar/FarmgateAccessAppointments@yourdomain.com/bookings/" target="_blank" rel="noopener noreferrer">
+              <a href="https://outlook.office365.com/owa/calendar/FarmgateFinanceAppointments@yourdomain.com/bookings/" target="_blank" rel="noopener noreferrer">
                 <AppointmentIcon className="mr-2 h-5 w-5" /> Book an Appointment
               </a>
             </Button>
