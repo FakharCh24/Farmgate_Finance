@@ -1,4 +1,4 @@
-# **App Name**: Farmgate Access
+# **App Name**: Farmgate Finance
 
 ## Core Features:
 
@@ -8,7 +8,6 @@
 - FAQ Section: Implement an accordion-style FAQ section with 10 questions and detailed answers.
 - Basic Pages: Include basic 'About', 'Terms and Conditions', and 'Login/Register' pages with simple content and form UIs.
 - Footer Design: Design a footer containing company information, contact details (email and phone), social media links, and repeated navigation links.
-- AI-Powered Scenario Tool: AI Tool: Implement an AI-powered feature on the home page to generate personalized financial scenarios based on user input. An LLM is used as a tool, that uses a current risk model to produce these scenarios.
 
 ## Style Guidelines:
 
