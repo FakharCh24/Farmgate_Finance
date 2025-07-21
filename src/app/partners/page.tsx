@@ -109,12 +109,12 @@ export default function PartnersPage() {
           {/* OLEA Partner Section */}
           <div className="flex justify-center items-center mt-8">
             <a href="https://olea.net" target="_blank" rel="nofollow noopener noreferrer" className="block group flex flex-col items-center">
-              <div className="relative w-80 h-40">
+              <div className="relative w-48 h-20 md:w-40 md:h-16">
                 <Image
                   src="/olea.png"
                   alt="Logo of OLEA - Farmgate Finance global technology partner"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 60vw, (max-width: 1200px) 30vw, 20vw"
                   className="object-contain"
                   data-ai-hint="OLEA logo"
                   loading="lazy"
