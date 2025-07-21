@@ -52,7 +52,7 @@ const PartnerSection = ({ title, icon: Icon, list, description }: PartnerSection
   <section className="mb-16">
     <div className="flex items-center gap-4 mb-8">
       <Icon className="h-8 w-8 text-primary" />
-      <h2 className="text-3xl font-bold font-headline">{title}</h2>
+      <h2 className="text-3xl font-bold font-headline text-[#234066]">{title}</h2>
     </div>
     {description && (
       <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-4 border-l-4 border-primary/40 pl-4">
