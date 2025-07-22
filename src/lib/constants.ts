@@ -32,7 +32,7 @@ export const partners = {
     ],
   },
   risk: {
-    title: 'Risk Management Partner',
+    title: 'Risk Management Partners',
     icon: ShieldCheck,
     list: [{ name: 'Jarden', logoUrl: '/jarden.png', website: 'https://jarden.co.nz' }],
   },
