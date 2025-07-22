@@ -35,7 +35,7 @@ export default function FAQPage() {
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-            FAQs | Farmgate Finance Milk Receivable Advances NZ
+            FAQs
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Answers about Farmgate Finance: cashflow facility, payments, milk price protection, banking arrangements and Fonterra alignment.
