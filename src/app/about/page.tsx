@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="mt-16 grid lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="/tech.jpg"
+                src="/tech.webp"
                 alt="Team of Farmgate Finance"
                 width={600}
                 height={400}
@@ -88,7 +88,7 @@ export default function AboutPage() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-2xl lg:order-1">
               <Image
-                src="/shakehand.jpg"
+                src="/shakehand.webp"
                 alt="New Zealand farm landscape"
                 width={600}
                 height={400}

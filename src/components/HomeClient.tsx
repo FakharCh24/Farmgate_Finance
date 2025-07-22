@@ -65,7 +65,7 @@ export default function HomeClient() {
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/Farm.jpg"
+          src="/Farm.webp"
           alt="Farmgate Finance cashflow facility for NZ dairy farmers"
           layout="fill"
           objectFit="cover"
@@ -227,7 +227,7 @@ export default function HomeClient() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg transition-transform duration-500 hover:scale-105">
               <Image
-                src="/Newzealand.jpg"
+                src="/Newzealand.webp"
                 alt="Farmgate Finance New Zealand landscape for dairy farmers"
                 width={600}
                 height={200}
