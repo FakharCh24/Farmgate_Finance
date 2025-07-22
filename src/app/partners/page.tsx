@@ -50,9 +50,9 @@ const PartnerCard = ({ partner }: { partner: Partner }) => (
 
 const PartnerSection = ({ title, icon: Icon, list, description }: PartnerSectionProps) => (
   <section className="mb-16">
-    <div className="flex items-center gap-4 mb-8">
+    <div className="flex items-center justify-center gap-4 mb-8">
       <Icon className="h-8 w-8 text-primary" />
-      <h2 className="text-3xl font-bold font-headline text-[#234066]">{title}</h2>
+      <h2 className="text-3xl font-bold font-headline text-[#234066] text-center">{title}</h2>
     </div>
     {description && (
       <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-4 border-l-4 border-primary/40 pl-4">
@@ -141,11 +141,13 @@ export default function PartnersPage() {
             'Farmgate Finance and the banks offer different but complementary financial solutions for farmers. While we may compete in some areas, we work closely with all major New Zealand banks to ensure payments flow smoothly.All major banks accept payments from Farmgate Finance, and we coordinate with them, so your financial arrangements work seamlessly alongside your existing bank facilities.'
           }
         />
-        <PartnerSection
-          title={partners.technology.title}
-          icon={Cpu}
-          list={partners.technology.list.filter((partner) => partner.name !== 'Olea')}
-          description={
+        {/* Custom technology section: description first, then centered row of partner cards below */}
+        <section className="mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <Cpu className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold font-headline text-[#234066] text-center">{partners.technology.title}</h2>
+          </div>
+          <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-8 border-l-4 border-primary/40 pl-4">
             <div>
               <div className="mb-1">Farmgate Finance relies on a trusted group of technology partners whose software and systems underpin the efficiency, security, and reliability of our service. These partners help us automate processes, minimize errors, and ensure fast, secure, and reliable service for farmers.</div>
               <ul className="space-y-0.5 pl-3">
@@ -154,24 +156,41 @@ export default function PartnersPage() {
                 <li><span className="font-semibold">Hermes Data Systems:</span> A New Zealand success story with proven expertise transferring financial data securely between clients and banks across New Zealand, Australia, and the UK.</li>
               </ul>
             </div>
-          }
-        />
-        <PartnerSection
-          title={partners.risk.title}
-          icon={ShieldCheck}
-          list={partners.risk.list}
-          description={
-            'Farmgate Finance works with Jarden to help manage milk price risk. Jarden arranges futures contracts based on milk price forecasts. This allows us to protect both you and us from large swings in milk prices, providing certainty and stability in your advance payments.'
-          }
-        />
-        <PartnerSection
-          title={partners.accounting.title}
-          icon={FileText}
-          list={partners.accounting.list}
-          description={
-            'We seamlessly integrate with your accounting software, including Xero, MYOB, QuickBooks, Reckon, Sage, and FarmFocus. Once we receive your updated production data from Fonterra, we process your payment and automatically update your accounting package — saving you time and reducing the risk of manual data entry errors.'
-          }
-        />
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            {partners.technology.list.filter((partner) => partner.name !== 'Olea').map((partner) => (
+              <PartnerCard key={partner.name} partner={partner} />
+            ))}
+          </div>
+        </section>
+        {/* Custom risk section: description first, then centered Jarden card below */}
+        <section className="mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <ShieldCheck className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold font-headline text-[#234066] text-center">{partners.risk.title}</h2>
+          </div>
+          <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-8 border-l-4 border-primary/40 pl-4">
+            Farmgate Finance works with Jarden to help manage milk price risk. Jarden arranges futures contracts based on milk price forecasts. This allows us to protect both you and us from large swings in milk prices, providing certainty and stability in your advance payments.
+          </div>
+          <div className="flex justify-center">
+            <PartnerCard partner={partners.risk.list[0]} />
+          </div>
+        </section>
+        {/* Custom accounting section: description first, then centered row of partner cards below */}
+        <section className="mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <FileText className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold font-headline text-[#234066] text-center">{partners.accounting.title}</h2>
+          </div>
+          <div className="max-w-2xl mx-auto flex flex-col gap-1 text-left text-muted-foreground text-sm mb-8 border-l-4 border-primary/40 pl-4">
+            We seamlessly integrate with your accounting software, including Xero, MYOB, QuickBooks, Reckon, Sage, and FarmFocus. Once we receive your updated production data from Fonterra, we process your payment and automatically update your accounting package — saving you time and reducing the risk of manual data entry errors.
+          </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            {partners.accounting.list.map((partner) => (
+              <PartnerCard key={partner.name} partner={partner} />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
